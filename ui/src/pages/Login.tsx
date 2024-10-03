@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Switch } from "@/components/ui/switch";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -44,16 +44,19 @@ function Login() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex border border-dark rounded-full mx-auto mb-4">
+      <div className="absolute top-5 right-5">
+        <ModeToggle />
+      </div>
+      <div className="flex border border-dark rounded-full mx-auto mb-4 p-[.3rem]">
         <Button
           variant={authRegisterStatus ? "default" : "outline"}
-          className="border-none rounded-full" 
+          className="border-none rounded-full"
           onClick={() => setAuthRegisterStatus(true)}
-          >
+        >
           Register
         </Button>
         <Button
-            className="border-none rounded-full"
+          className="border-none rounded-full"
           variant={!authRegisterStatus ? "default" : "outline"}
           onClick={() => setAuthRegisterStatus(false)}
         >
@@ -66,7 +69,7 @@ function Login() {
           className="p-4 border border-dark flex flex-col justify-between gap-4 mx-3 min-h-[60vh]"
           onSubmit={handleSubmitRegister}
         >
-          <h1 className="h1">Register</h1>
+          <h1 className="text-2xl font-bold">Register</h1>
           <div>
             <Label htmlFor="name">Name</Label>
             <Input
@@ -107,7 +110,7 @@ function Login() {
           className="p-4 border border-dark flex flex-col justify-between gap-4 mx-3 min-h-[60vh]"
           onSubmit={handleSubmitLogim}
         >
-          <h1 className="h1">Login</h1>
+          <h1 className="text-2xl font-bold">Login</h1>
           <div>
             <Label htmlFor="name">Name</Label>
             <Input
