@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 console.log(process.env.MONGO_URI)
 
-// Middleware
+// Middleware 
 app.use(cors());
 app.use(json());
 
